@@ -1,0 +1,25 @@
+---
+- hosts: 192.168.122.2
+  tasks:
+  - name: Subscribe to a specific pool by ID.
+    redhat_subscription:
+      state: present
+      username: rhn-support-clocklea      
+      password: 49Restive%
+      pool_ids: 8a85f9833e1404a9013e3cddf95a0599
+  - name: Create a login user
+    user:
+      name: CLocklear
+      uid: 2000
+  - name: Install web server
+    yum:
+      name: httpd
+      state: present
+  - name: ensure web servver is running
+    service:
+      name: httpd
+      state: started
+      
+      
+    
+    
