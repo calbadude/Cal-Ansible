@@ -1,0 +1,16 @@
+---
+- name: Ensure no web
+  hosts: servers
+  become: yes
+  tasks:
+    - name: remove httpd
+      yum:
+        name: 
+          - httpd
+#         - firewalld
+        state: absent
+
+    - name: restart firewalld
+      service:
+        name: firewalld
+        state: reloaded
