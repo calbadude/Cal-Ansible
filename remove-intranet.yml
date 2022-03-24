@@ -1,6 +1,6 @@
 ---
 - name: Ensure no web
-  hosts: servers
+  hosts: web-servers
   become: yes
   tasks:
     - name: remove httpd
