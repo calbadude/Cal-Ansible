@@ -1,0 +1,40 @@
+---
+- name: Enable web
+  hosts: web-servers
+  become: yes
+  tasks:
+    - name: install latest versions
+      yum:
+        name: 
+          - httpd
+          - firewalld
+        state: present
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+
+    - name: enable httpd
+      service: 
+        name: httpd
+        enabled: yes
+
+    - name: firewall for http
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+        immediate: yes
+      notify: "restart firewalld"
+      ignore_errors: true
+
+    - name: restart firewalld
+      service:
+        name: firewalld
+        state: reloaded
+        
+    - name: test html page
+      copy:
+        src: ~/Projects/Ansible/files/index.html
+        dest: /var/www/html/index.html
