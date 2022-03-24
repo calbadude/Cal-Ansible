@@ -26,7 +26,7 @@
         permanent: yes
         state: enabled
         immediate: yes
-      notify: "restart firewalld"
+      notify: "Restart Firewalld"
       ignore_errors: true
 
     - name: restart firewalld
