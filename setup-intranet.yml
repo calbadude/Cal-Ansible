@@ -36,5 +36,5 @@
         
     - name: test html page
       copy:
-        src: ~/Projects/Ansible/files/index.html
+        src: index.html
         dest: /var/www/html/index.html
