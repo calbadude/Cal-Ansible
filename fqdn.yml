@@ -1,0 +1,8 @@
+---
+- name: what's my name
+  hosts: servers
+  gather_facts: yes
+
+  tasks:
+  - name: name
+    debug: var=inventory_hostname
