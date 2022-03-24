@@ -1,6 +1,6 @@
 ---
 - name: what's my name
-  hosts: servers
+  hosts: web-servers
   gather_facts: yes
 
   tasks:
