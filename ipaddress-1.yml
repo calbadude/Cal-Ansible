@@ -1,6 +1,6 @@
 ---
 - name: list my ip addresses
-  hosts: servers
+  hosts: web-servers
   gather_facts: yes
 
   tasks:
