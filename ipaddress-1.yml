@@ -1,0 +1,9 @@
+---
+- name: list my ip addresses
+  hosts: servers
+  gather_facts: yes
+
+  tasks:
+  - name: list of ip addresses
+    debug:
+      msg: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
