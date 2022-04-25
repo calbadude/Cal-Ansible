@@ -1,8 +1,9 @@
 ---
-- hosts: rhel7.calba.cc
+- name: Auto-subscribe the RHEL7 system 
+  hosts: rhel7.calba.cc
   tasks:
   - name: Auto subscribe
-    community.general.redhat_subscription:
+    redhat_subscription:
       state: present
       username: rhn-support-clocklea      
       password: Ctl126Hdl515%
