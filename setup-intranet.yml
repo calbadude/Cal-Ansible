@@ -1,6 +1,6 @@
 ---
 - name: Enable web
-  hosts: crew
+  hosts: rhel7.calba.cc
   become: yes
   tasks:
     - name: install latest versions
