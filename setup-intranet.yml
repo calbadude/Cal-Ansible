@@ -22,13 +22,14 @@
 
     - name: firewall for http
       firewalld:
-        service: http
         permanent: yes
         state: enabled
         immediate: yes
-      notify: "Restart Firewalld"
-      ignore_errors: true
-
+        service: "{{ item }}"
+      with_items:
+        - http
+        - https
+        
     - name: restart firewalld
       service:
         name: firewalld
