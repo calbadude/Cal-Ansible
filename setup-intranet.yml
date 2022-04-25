@@ -21,7 +21,7 @@
         enabled: yes
 
     - name: firewall for http
-      ansible.posix.firewalld:
+      firewalld:
         permanent: yes
         state: enabled
         immediate: yes
