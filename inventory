@@ -1,7 +1,7 @@
 [local]
 localhost ansible_python_interpreter="usr/bin/env python"
 
-[crew]
+[servers]
 centos8.calba.cc
 rhel7.calba.cc
 oracle8.calba.cc
