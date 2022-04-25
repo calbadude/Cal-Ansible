@@ -1,6 +1,6 @@
 ---
 - name: Enable web
-  hosts: Demo
+  hosts: crew
   become: yes
   tasks:
     - name: install latest versions
